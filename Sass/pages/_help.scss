@@ -1,0 +1,173 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+.help-section {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    min-height: 100vh;
+    background-color: #ffffff;
+}
+
+.help-content {
+    flex: 1;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    h1 {
+        font-size: 2.5rem;
+        margin-bottom: 30px;
+    }
+
+    .help-cards {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+
+        .help-card {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            flex: 1 1 calc(50% - 20px); // 50% width minus the gap
+
+            h2 {
+                font-size: 1.5rem;
+                margin-bottom: 10px;
+            }
+
+            p {
+                margin-bottom: 10px;
+            }
+
+            a {
+                color: #0073e6;
+                text-decoration: none;
+                font-weight: bold;
+                display: inline-block;
+                margin-top: 10px;
+            }
+        }
+    }
+}
+
+.help-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+
+    img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        height: 100%;
+    }
+}
+
+@media (max-width: 992px) {
+    .help-content {
+        padding: 20px;
+
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .help-cards {
+            .help-card {
+                flex: 1 1 100%; // Full width for each card
+                h2 {
+                    font-size: 1.3rem;
+                }
+
+                p {
+                    font-size: 1rem;
+                }
+
+                a {
+                    font-size: 1rem;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .help-section {
+        flex-direction: column;
+    }
+
+    .help-image {
+        order: 1; // Move image to the bottom on small screens
+        width: 100%; // Ensure image takes full width
+    }
+
+    .help-content {
+        padding: 20px;
+
+        h1 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+
+        .help-cards {
+            .help-card {
+                flex: 1 1 100%; 
+                h2 {
+                    font-size: 1.2rem;
+                }
+
+                p {
+                    font-size: 0.9rem;
+                }
+
+                a {
+                    font-size: 0.9rem;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .help-content {
+        padding: 10px;
+
+        h1 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .help-cards {
+            .help-card {
+                h2 {
+                    font-size: 1rem;
+                }
+
+                p {
+                    font-size: 0.8rem;
+                }
+
+                a {
+                    font-size: 0.8rem;
+                }
+            }
+        }
+    }
+
+    .help-image {
+        height: auto; // Ensure image height is not restricted
+    }
+}
